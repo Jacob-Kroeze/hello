@@ -35,7 +35,7 @@ Build the project. You don't have to set up a dev environment, docker is all you
 Create a docker image and test it in your local environment:
 ````
 docker build -t uscdev/hello-[yourname] .
-docker run --rm -p 8085:8080 uscdev/helloweb-[yourname]
+docker run --rm -p 4000:4000 uscdev/hello-[yourname]
 Point your web browser to:
 http://localhost:4000
 ````
@@ -45,7 +45,7 @@ Try to deploy the docker image to our public docker repo:
 docker login
  username: [docker user]
  password: [your password]
-docker push uscdev/hello-[yourname]:latest
+docker push uscdev/hello-[yourname]
 ````
  
 Set your local environment so you can talk to the swarm:
@@ -77,7 +77,7 @@ docker stack deploy --compose-file docker-compose.yml hello-[yourname]
  
 Point your browser to:
 ````
-http://hello-[yourname].docker.usc.edu
+https://hello-[yourname].docker.usc.edu
 ````
 
 Note:- In case the service helloweb already exists, use the commands 
